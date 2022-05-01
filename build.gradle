@@ -1,5 +1,6 @@
 apply plugin: 'java'
 apply from: 'dependencies.gradle'
+
 sourceSets {
     main {
         java {
@@ -13,4 +14,14 @@ sourceSets {
             exclude "net/nanopay/blob/**"
         }
     }
+}
+
+task copyLib(type: Copy) {
+    duplicatesStrategy = DuplicatesStrategy.FAIL
+    from configurations.runtimeClasspath
+    into "${project.targetDir}/lib"
+}
+
+compileJava {
+    dependsOn tasks.copyLib
 }
