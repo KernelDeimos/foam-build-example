@@ -1,3 +1,4 @@
+set -e
 node foam3/tools/genjs
 node foam3/tools/genjava -outdir=build/src/java pom
 gradle build

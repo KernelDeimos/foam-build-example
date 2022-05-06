@@ -10,6 +10,10 @@ JAVA_OPTS="-Dnanos.webroot=${PWD} ${JAVA_OPTS}"
 JAVA_OPTS="${JAVA_OPTS} -DJOURNAL_HOME=$JOURNAL_HOME"
 # JAVA_OPTS="${JAVA_OPTS} -DDOCUMENT_HOME=$DOCUMENT_HOME"
 
+DEBUG_PORT=8000
+DEBUG_SUSPEND=n
+JAVA_OPTS="-agentlib:jdwp=transport=dt_socket,server=y,suspend=${DEBUG_SUSPEND},address=${DEBUG_PORT} ${JAVA_OPTS}"
+
 
 CLASSPATH=$(JARS=("target/lib"/*.jar); IFS=:; echo "${JARS[*]}")
 CLASSPATH="build/classes/java/main:$CLASSPATH"
