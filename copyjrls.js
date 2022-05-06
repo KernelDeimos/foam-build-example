@@ -48,6 +48,11 @@ async function findJournals({ jrls, srcPath }) {
 
 const main = async function () {
     const jrls = {};
+    names = fs_.readFileSync('./journals').toString().split('\n');
+    for ( let name of names ) {
+        if ( name === '' ) continue;
+        jrls[name] = '';
+    }
     await findJournals({ jrls, srcPath: 'foam3/src' });
     await findJournals({ jrls, srcPath: 'myproject/src' });
 
