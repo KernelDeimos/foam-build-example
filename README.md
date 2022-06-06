@@ -1,12 +1,16 @@
 # FOAM Build Example
 
-```sh
-# build Javascript bundle
-node foam3/tools/genjs
+## Build FOAM
 
-# generate Java code
-node foam3/tools/genjava.js -outdir=build/src/java pom
-
-# compile Java code
-gradle build
 ```
+node foam3/tools/foobar
+```
+
+## Run FOAM
+
+```
+./run.sh
+```
+
+Note: `run.sh` will eventually be replaced with FOOBAR as well
+
