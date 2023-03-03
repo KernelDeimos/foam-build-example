@@ -36,7 +36,7 @@ async function findJournals({ jrls, srcPath }) {
     walker.files.sub((_1, _2, info) => {
         for ( const fileInfo of info.files ) {
             const extName = path_.extname(fileInfo.name);
-            if ( extName !== '' && extName !== '.jrl' ) continue;
+            if ( extName !== '.jrl' ) continue;
             const fullPath = fileInfo.fullPath;
             const baseName = path_.basename(fileInfo.name, extName);
             if ( ! jrls[baseName] ) jrls[baseName] = '';
@@ -48,11 +48,11 @@ async function findJournals({ jrls, srcPath }) {
 
 const main = async function () {
     const jrls = {};
-    names = fs_.readFileSync('./journals').toString().split('\n');
-    for ( let name of names ) {
-        if ( name === '' ) continue;
-        jrls[name] = '';
-    }
+    // names = fs_.readFileSync('./journals').toString().split('\n');
+    // for ( let name of names ) {
+    //     if ( name === '' ) continue;
+    //     jrls[name] = '';
+    // }
     await findJournals({ jrls, srcPath: 'foam3/src' });
     await findJournals({ jrls, srcPath: 'myproject/src' });
 
