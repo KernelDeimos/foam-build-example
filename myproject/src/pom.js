@@ -1,4 +1,7 @@
 foam.POM({
     name: 'myproject',
-    version: 1
+    version: 1,
+    projects: [
+        { name: 'a/pom' }
+    ]
 });
