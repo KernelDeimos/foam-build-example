@@ -1,0 +1,22 @@
+p({
+  class: "foam.nanos.boot.NSpec",
+  name: "worldDAO",
+  serve: true,
+  serviceScript: """
+    return new foam.dao.EasyDAO.Builder(x)
+      .setOf(hello.World.getOwnClassInfo())
+      .setFuid(true)
+      .setPm(true)
+      .setJournalType(foam.dao.JournalType.SINGLE_JOURNAL)
+      .setJournalName("worlds")
+      .setOrder(new foam.mlang.order.Comparator[] { hello.World.NAME })
+      .build()
+      .addPropertyIndex(new foam.core.PropertyInfo[] { hello.World.NAME })
+      .addPropertyIndex(new foam.core.PropertyInfo[] { hello.World.UNIVERSE });
+  """,
+  client: """
+    {
+      "of":"hello.World"
+    }
+   """
+})
