@@ -1,0 +1,24 @@
+p({
+  class:"foam.nanos.menu.Menu",
+  id:"hello",
+  label: "Hello",
+  keywords: ["hello"],
+  handler: {
+    class:"foam.nanos.menu.SubMenu"
+  },
+  parent:""
+})
+p({
+  class: "foam.nanos.menu.Menu",
+  id: "hello.world",
+  label: "Worlds",
+  keywords: ["hello","worlds"],
+  handler: {
+    class: "foam.nanos.menu.DAOMenu2",
+    config: {
+      class: "foam.comics.v2.DAOControllerConfig",
+      daoKey: "worldDAO"
+    }
+  },
+  parent: "hello"
+})

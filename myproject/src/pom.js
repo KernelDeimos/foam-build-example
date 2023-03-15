@@ -2,6 +2,7 @@ foam.POM({
     name: 'myproject',
     version: 1,
     projects: [
-        { name: 'a/pom' }
+      { name: 'a/pom' },
+      { name: 'hello/pom' }
     ]
 });
