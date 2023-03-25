@@ -44,3 +44,20 @@ p({
     }]
   }
 })
+
+r({"class":"foam.nanos.boot.NSpec", "name":"liveScriptBundler" })
+
+p({
+  "class":"foam.nanos.boot.NSpec",
+  "name":"appConfig",
+  "description":"",
+  "lazy":false,
+  "parameters":false,
+  "pm":true,
+  "service": {
+    "class":"foam.nanos.app.AppConfig",
+    "pom":"../../pom",
+    "mode":0,
+  }
+})
+
